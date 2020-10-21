@@ -6,19 +6,19 @@ r = session.get(url)
 
 
 def get(title):
-	r_title = r.html.find(title)
-	r_code = r.html.find('tr > td:nth-child(2) > code > span')  #
+    r_title = r.html.find(title)
+    r_code = r.html.find('tr > td:nth-child(2) > code > span')  #
 
-	data = []
+    data = []
 
-	print(r_title[0].text)
-	for result in r_code:
-		data.append(result.text)
-		data = " ".join(data)
-		print(data)
-		data = []
+    print(r_title[0].text)
+    for result in r_code:
+        data.append(result.text)
+        data = " ".join(data)
+        print(data)
+        data = []
 
 
 if __name__ == "__main__":
-	sel_title = 'head > title'
-	get(sel_title)
+    sel_title = 'head > title'
+    get(sel_title)
